@@ -1,13 +1,11 @@
 package com.ipn.escom.conversor_sql.models;
 
+import java.util.List;
+
+import lombok.Data;
+
+@Data
 public class ArConvertResponse {
     private String algebraRelacional;
-
-    public ArConvertResponse() { }
-    public ArConvertResponse(String algebraRelacional) {
-        this.algebraRelacional = algebraRelacional;
-    }
-
-    public String getAlgebraRelacional() { return algebraRelacional; }
-    public void setAlgebraRelacional(String algebraRelacional) { this.algebraRelacional = algebraRelacional; }
+    private List<String> pasos;
 }

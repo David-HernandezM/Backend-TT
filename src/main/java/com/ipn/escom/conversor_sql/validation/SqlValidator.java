@@ -128,12 +128,13 @@ public class SqlValidator {
 		if (!validationResult.isValido())
 			return;
 
+		// 7) WHERE: validar tipos de las expresiones 
 		WhereValidator.validateWhereTypes(plainSelect.getWhere(), availableSources, schemaIndex, validationResult,
 				selectColumnAliases);
 		if (!validationResult.isValido())
 			return;
 
-		// 7) JOIN ... ON: validar tipos en condiciones ON (y prohibir alias de columna)
+		// 8) JOIN ... ON: validar tipos en condiciones ON (y prohibir alias de columna)
 		JoinValidator.validateJoinOnTypes(plainSelect.getJoins(), availableSources, schemaIndex, validationResult,
 				selectColumnAliases);
 	}
